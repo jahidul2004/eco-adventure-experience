@@ -1,0 +1,111 @@
+[
+    {
+        "id": 1,
+        "title": "Mountain Trekking",
+        "image": "https://i.ibb.co.com/C2L6DDQ/download.jpg",
+        "category": "Mountain",
+        "shortDescription": "Experience breathtaking mountain views and serene trails.",
+        "adventureCost": 250,
+        "bookingAvailability": true,
+        "location": "Himalayas",
+        "duration": "5 days",
+        "adventureLevel": "Moderate",
+        "includedItems": ["Guide", "Meals", "First Aid Kit", "Camping Gear"],
+        "ecoFriendlyFeatures": ["Reusable utensils", "Leave no trace policy"],
+        "maxGroupSize": 8,
+        "specialInstructions": [
+            "Bring warm clothing",
+            "Ensure good physical fitness",
+            "Pack light but essential items"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Ocean Scuba Diving",
+        "image": "https://i.ibb.co.com/C2L6DDQ/download.jpg",
+        "category": "Ocean",
+        "shortDescription": "Dive into the vibrant underwater world of coral reefs.",
+        "adventureCost": 400,
+        "bookingAvailability": false,
+        "location": "Maldives",
+        "duration": "3 days",
+        "adventureLevel": "Advanced",
+        "includedItems": ["Diving gear", "Oxygen tank", "Guide"],
+        "ecoFriendlyFeatures": [
+            "Marine-safe sunscreen",
+            "Eco-friendly diving practices"
+        ],
+        "maxGroupSize": 6,
+        "specialInstructions": [
+            "Carry a valid diving certificate",
+            "Avoid touching marine life",
+            "Follow the instructor’s guidelines"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Wildlife Safari",
+        "image": "https://i.ibb.co.com/C2L6DDQ/download.jpg",
+        "category": "Wildlife",
+        "shortDescription": "Witness exotic wildlife in their natural habitat.",
+        "adventureCost": 300,
+        "bookingAvailability": true,
+        "location": "Serengeti National Park",
+        "duration": "4 days",
+        "adventureLevel": "Easy",
+        "includedItems": ["Binoculars", "Transportation", "Meals"],
+        "ecoFriendlyFeatures": [
+            "Electric safari vehicles",
+            "Plastic-free policy"
+        ],
+        "maxGroupSize": 12,
+        "specialInstructions": [
+            "Wear neutral-colored clothing",
+            "Avoid loud noises",
+            "Respect wildlife distance rules"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "River Rafting",
+        "image": "https://i.ibb.co.com/C2L6DDQ/download.jpg",
+        "category": "River",
+        "shortDescription": "Ride thrilling rapids in a scenic river landscape.",
+        "adventureCost": 150,
+        "bookingAvailability": true,
+        "location": "Colorado River",
+        "duration": "1 day",
+        "adventureLevel": "Challenging",
+        "includedItems": ["Rafting gear", "Life jackets", "Guide"],
+        "ecoFriendlyFeatures": [
+            "Non-toxic cleaning agents for gear",
+            "Minimal impact rafting"
+        ],
+        "maxGroupSize": 10,
+        "specialInstructions": [
+            "Wear water-resistant clothing",
+            "Carry an extra pair of dry clothes",
+            "Ensure you can swim confidently"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Camping Retreat",
+        "image": "https://i.ibb.co.com/C2L6DDQ/download.jpg",
+        "category": "Camping",
+        "shortDescription": "Unwind in the tranquility of nature with a camping retreat.",
+        "adventureCost": 200,
+        "bookingAvailability": true,
+        "location": "Rocky Mountains",
+        "duration": "3 days",
+        "adventureLevel": "Easy",
+        "includedItems": ["Tent", "Sleeping bags", "Meals"],
+        "ecoFriendlyFeatures": ["Solar-powered lanterns", "No-waste cooking"],
+        "maxGroupSize": 15,
+        "specialInstructions": [
+            "Pack layers for varying temperatures",
+            "Carry biodegradable toiletries",
+            "Avoid leaving any waste"
+        ]
+    }
+]

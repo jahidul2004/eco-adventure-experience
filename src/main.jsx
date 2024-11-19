@@ -10,12 +10,19 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Layout></Layout>,
-        children:[
-          {
-            path: "/",
-            element:<Home></Home>
-          }
-        ]
+        children: [
+            {
+                path: "/",
+                element: <Home></Home>,
+                loader: async () => {
+                    const response = await fetch("/public/advanture.json");
+                    if (!response.ok) {
+                        throw new Error("Failed to load adventures");
+                    }
+                    return response.json();
+                }
+            },
+        ],
     },
 ]);
 

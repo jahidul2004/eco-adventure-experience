@@ -7,10 +7,10 @@ const Navbar = () => {
                 <Link>Home</Link>
             </li>
             <li>
-                <Link>Update Profile</Link>
+                <Link>Your Profile</Link>
             </li>
             <li>
-                <Link>User Profile</Link>
+                <Link>Update Profile</Link>
             </li>
         </>
     );
