@@ -7,8 +7,8 @@ const Home = () => {
 
     return (
         <div className="p-4 m-5">
-            <div className="mb-10 rounded-lg">
-                <div className="carousel w-full">
+            <div className="mb-10">
+                <div className="carousel w-full rounded-lg">
                     <div id="slide1" className="carousel-item relative w-full">
                         <img
                             src="https://i.ibb.co.com/C2L6DDQ/download.jpg"
