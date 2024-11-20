@@ -14,12 +14,17 @@ const AuthProvider = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password);
     };
 
+    const loginUser = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password);
+    }
+
     console.log("User is: ", user);
 
     const data = {
         user,
         setUser,
         createNewUser,
+        loginUser,
     };
 
     useEffect(() => {

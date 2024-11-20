@@ -1,8 +1,32 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Login = () => {
+    const { loginUser } = useContext(AuthContext);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+
+        const email = formData.get("email");
+        const password = formData.get("password");
+
+        loginUser(email, password)
+            .then((userCredential) =>{
+                console.log(userCredential.user);
+            })
+            .catch((error)=>{
+                console.log("ERROR:", error);
+            })
+    };
+
     return (
-        <form className="max-w-[400px] mx-auto shadow-xl p-5 rounded-lg my-10 flex flex-col gap-4">
+        <form
+            onSubmit={handleSubmit}
+            className="max-w-[400px] mx-auto shadow-xl p-5 rounded-lg my-10 flex flex-col gap-4"
+        >
             <h1 className="text-success text-center font-bold text-2xl">
                 User Login
             </h1>
@@ -16,7 +40,12 @@ const Login = () => {
                     <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
                     <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                 </svg>
-                <input type="email" className="grow" placeholder="Email" />
+                <input
+                    name="email"
+                    type="email"
+                    className="grow"
+                    placeholder="Email"
+                />
             </label>
             <label className="input input-bordered flex items-center gap-2">
                 <svg
@@ -32,6 +61,7 @@ const Login = () => {
                     />
                 </svg>
                 <input
+                    name="password"
                     type="password"
                     className="grow"
                     placeholder="Password"
@@ -41,7 +71,10 @@ const Login = () => {
             <button className="btn btn-success text-white">Login</button>
             <p>
                 Have any account? please{" "}
-                <Link className="text-success font-semibold" to={"/registration"}>
+                <Link
+                    className="text-success font-semibold"
+                    to={"/registration"}
+                >
                     Registration
                 </Link>
             </p>
