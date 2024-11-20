@@ -1,9 +1,10 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-    const { loginUser } = useContext(AuthContext);
+    const { loginUser, user, loginWithGoogle } = useContext(AuthContext);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -21,6 +22,10 @@ const Login = () => {
                 console.log("ERROR:", error);
             })
     };
+
+    if(user){
+        return <Navigate to={"/"} />;
+    }
 
     return (
         <form
@@ -69,6 +74,7 @@ const Login = () => {
             </label>
             <Link className="text-success font-semibold">Forget Password?</Link>
             <button className="btn btn-success text-white">Login</button>
+            <p onClick={loginWithGoogle} className="btn border-success text-success bg-white"><FcGoogle /> Login With Google</p>
             <p>
                 Have any account? please{" "}
                 <Link
