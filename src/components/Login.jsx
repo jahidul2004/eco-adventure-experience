@@ -1,11 +1,14 @@
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-    const { loginUser, user, loginWithGoogle, forgetPassword } = useContext(AuthContext);
+    const { loginUser, user, loginWithGoogle, forgetPassword } =
+        useContext(AuthContext);
     const emailRef = useRef();
+
+    const [error, setError] = useState(null);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -15,29 +18,32 @@ const Login = () => {
         const email = formData.get("email");
         const password = formData.get("password");
 
+        setError(null);
+
         loginUser(email, password)
-            .then((userCredential) =>{
+            .then((userCredential) => {
                 console.log(userCredential.user);
             })
-            .catch((error)=>{
+            .catch((error) => {
                 console.log("ERROR:", error);
-            })
+                setError(error.message);
+            });
     };
 
-    if(user){
+    if (user) {
         return <Navigate to={"/"} />;
     }
 
-    const handleForget = () =>{
+    const handleForget = () => {
         const email = emailRef.current.value;
         forgetPassword(email)
-        .then((result)=>{
-            console.log("Forget Password Email Sent:", result);
-        })
-        .catch((error)=>{
-            console.log("Forget Password Error:", error);
-        })
-    }
+            .then((result) => {
+                console.log("Forget Password Email Sent:", result);
+            })
+            .catch((error) => {
+                console.log("Forget Password Error:", error);
+            });
+    };
 
     return (
         <form
@@ -85,9 +91,16 @@ const Login = () => {
                     placeholder="Password"
                 />
             </label>
-            <Link onClick={handleForget} className="text-success font-semibold">Forget Password?</Link>
+            <Link onClick={handleForget} className="text-success font-semibold">
+                Forget Password?
+            </Link>
             <button className="btn btn-success text-white">Login</button>
-            <p onClick={loginWithGoogle} className="btn border-success text-success bg-white"><FcGoogle /> Login With Google</p>
+            <p
+                onClick={loginWithGoogle}
+                className="btn border-success text-success bg-white"
+            >
+                <FcGoogle /> Login With Google
+            </p>
             <p>
                 Have any account? please{" "}
                 <Link
@@ -97,6 +110,8 @@ const Login = () => {
                     Registration
                 </Link>
             </p>
+
+            <p className="text-error font-semibold">{error}</p>
         </form>
     );
 };

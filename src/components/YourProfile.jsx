@@ -24,7 +24,7 @@ const YourProfile = () => {
                                     {user.displayName}
                                 </p>
                                 <p className="font-semibold">{user.email}</p>
-                                <Link className="btn btn-success text-white mt-2">
+                                <Link to={"/updateProfile"} className="btn btn-success text-white mt-2">
                                     Update Profile
                                 </Link>
                             </div>
