@@ -7,11 +7,13 @@ import Layout from "./layout/Layout";
 import Home from "./components/Home";
 import Registration from "./components/Registration";
 import Login from "./components/Login";
+import ErrorPage from "./components/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Layout></Layout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
