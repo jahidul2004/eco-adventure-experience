@@ -12,6 +12,7 @@ import AuthProvider from "./provider/AuthProvider";
 import YourProfile from "./components/YourProfile";
 import UpdateProfile from "./components/UpdateProfile";
 import AdventureDetails from "./components/AdventureDetails";
+import { ToastContainer } from "react-toastify";
 
 const router = createBrowserRouter([
     {
@@ -44,18 +45,19 @@ const router = createBrowserRouter([
             },
             {
                 path: "/updateProfile",
-                element: <UpdateProfile></UpdateProfile>
+                element: <UpdateProfile></UpdateProfile>,
             },
             {
                 path: "/adventure/:id",
-                element: <AdventureDetails></AdventureDetails>
-            }
+                element: <AdventureDetails></AdventureDetails>,
+            },
         ],
     },
 ]);
 
 createRoot(document.getElementById("root")).render(
     <StrictMode>
+        <ToastContainer />
         <AuthProvider>
             <RouterProvider router={router} />
         </AuthProvider>

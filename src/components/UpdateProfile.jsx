@@ -1,13 +1,29 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Navigate } from "react-router-dom";
+import { notify } from "../utilities/utils";
 
 const UpdateProfile = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        const formData = new FormData(event.target);
+
+        const name = formData.get("name");
+        const photo = formData.get("photo");
+
+        updateUserProfile({ displayName: name, photoURL: photo })
+            .then((result) => {
+                console.log("Profile Updated: ", result);
+                notify("Profile Updated Successfully");
+            })
+            .catch((error) => {
+                console.error("Error updating profile: ", error);
+                notify("Error updating profile", "error");
+            });
     };
 
-    const { user } = useContext(AuthContext);
+    const { user, updateUserProfile } = useContext(AuthContext);
 
     return (
         <div>
