@@ -59,12 +59,19 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 {user ? (
-                    <Link
-                        onClick={logOut}
-                        className="btn btn-success text-white"
-                    >
-                        Logout
-                    </Link>
+                    <div className="flex">
+                        <img
+                            className="w-[50px] h-[50px] border-2 border-success rounded-full p-1 mr-3"
+                            src={user.photoURL}
+                            alt=""
+                        />
+                        <Link
+                            onClick={logOut}
+                            className="btn btn-success text-white"
+                        >
+                            Logout
+                        </Link>
+                    </div>
                 ) : (
                     <Link to={"/login"} className="btn btn-primary text-white">
                         Login
