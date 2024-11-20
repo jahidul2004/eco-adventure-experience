@@ -2,6 +2,7 @@ import { useContext, useRef, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     const { loginUser, user, loginWithGoogle, forgetPassword } =
@@ -50,6 +51,9 @@ const Login = () => {
             onSubmit={handleSubmit}
             className="max-w-[400px] mx-auto shadow-xl p-5 rounded-lg my-10 flex flex-col gap-4"
         >
+            <Helmet>
+                <title>Login</title>
+            </Helmet>
             <h1 className="text-success text-center font-bold text-2xl">
                 User Login
             </h1>

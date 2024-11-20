@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Navigate } from "react-router-dom";
 import { notify } from "../utilities/utils";
+import { Helmet } from "react-helmet";
 
 const UpdateProfile = () => {
     const handleSubmit = (event) => {
@@ -27,6 +28,9 @@ const UpdateProfile = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Update Profile</title>
+            </Helmet>
             {user ? (
                 <form
                     onSubmit={handleSubmit}

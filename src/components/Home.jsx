@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 
 const Home = () => {
@@ -7,6 +8,9 @@ const Home = () => {
 
     return (
         <div className="m-5">
+            <Helmet>
+                <title>Home</title>
+            </Helmet>
             <div className="mb-10">
                 <div className="carousel w-full rounded-lg">
                     <div

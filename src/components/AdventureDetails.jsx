@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import Modal from "../components/Modal";
+import { Helmet } from "react-helmet";
 
 const AdventureDetails = () => {
     const { user } = useContext(AuthContext);
@@ -41,6 +42,9 @@ const AdventureDetails = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>{adventure.title}</title>
+            </Helmet>
             {user ? (
                 <div className="m-5 flex flex-col md:flex-row gap-4 text-left">
                     <div>

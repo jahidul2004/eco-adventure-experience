@@ -1,12 +1,16 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, Navigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const YourProfile = () => {
     const { user } = useContext(AuthContext);
 
     return (
         <div>
+            <Helmet>
+                <title>Your Profile</title>
+            </Helmet>
             {user ? (
                 <div>
                     <h1 className="text-center font-bold text-success text-4xl mt-5">

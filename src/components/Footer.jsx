@@ -18,16 +18,16 @@ const Footer = () => {
             </aside>
             <nav>
                 <div className="grid grid-flow-col gap-4">
-                    <a href="https://github.com/jahidul2004">
+                    <a className="animate__animated animate__rubberBand animate__infinite" href="https://github.com/jahidul2004">
                         <FaGithub />
                     </a>
-                    <a href="https://www.facebook.com/share/dbMWtFD4uzSn8KqU/">
+                    <a className="animate__animated animate__rubberBand animate__infinite" href="https://www.facebook.com/share/dbMWtFD4uzSn8KqU/">
                         <FaFacebook />
                     </a>
-                    <a href="https://www.instagram.com/islam.jahidul.jihad">
+                    <a className="animate__animated animate__rubberBand animate__infinite" href="https://www.instagram.com/islam.jahidul.jihad">
                         <FaSquareInstagram />
                     </a>
-                    <a href="https://www.threads.net/@islam.jahidul.jihad">
+                    <a className="animate__animated animate__rubberBand animate__infinite" href="https://www.threads.net/@islam.jahidul.jihad">
                         <BsFillThreadsFill />
                     </a>
                 </div>

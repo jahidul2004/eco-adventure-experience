@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import "animate.css";
 
 const Navbar = () => {
     const links = (
@@ -50,7 +51,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-2xl font-bold text-success">
+                <a className="animate__animated animate__bounce btn btn-ghost text-2xl font-bold text-success">
                     Eco-Adventure
                 </a>
             </div>
@@ -73,7 +74,7 @@ const Navbar = () => {
                         </Link>
                     </div>
                 ) : (
-                    <Link to={"/login"} className="btn btn-success text-white">
+                    <Link to={"/login"} className="animate__animated animate__fadeIn btn btn-success text-white">
                         Login
                     </Link>
                 )}

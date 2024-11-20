@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const Registration = () => {
     const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
@@ -35,6 +36,9 @@ const Registration = () => {
 
     return (
         <form onSubmit={handleSubmit} className="max-w-[400px] mx-auto shadow-xl p-5 rounded-lg my-10 flex flex-col gap-4">
+            <Helmet>
+                <title>Registration</title>
+            </Helmet>
             <h1 className="text-success text-center font-bold text-2xl">
                 User Registration
             </h1>
