@@ -12,7 +12,7 @@ const Navbar = () => {
                 <Link to={"/yourProfile"}>Your Profile</Link>
             </li>
             <li>
-                <Link>Update Profile</Link>
+                <Link to={"/updateProfile"}>Update Profile</Link>
             </li>
         </>
     );
@@ -51,7 +51,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-2xl font-bold text-success">
-                    Eco-Adventure Experiences
+                    Eco-Adventure
                 </a>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -67,13 +67,13 @@ const Navbar = () => {
                         />
                         <Link
                             onClick={logOut}
-                            className="btn btn-success text-white"
+                            className="btn btn-error text-white"
                         >
                             Logout
                         </Link>
                     </div>
                 ) : (
-                    <Link to={"/login"} className="btn btn-primary text-white">
+                    <Link to={"/login"} className="btn btn-success text-white">
                         Login
                     </Link>
                 )}

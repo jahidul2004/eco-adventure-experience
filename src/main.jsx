@@ -10,6 +10,8 @@ import Login from "./components/Login";
 import ErrorPage from "./components/ErrorPage";
 import AuthProvider from "./provider/AuthProvider";
 import YourProfile from "./components/YourProfile";
+import UpdateProfile from "./components/UpdateProfile";
+import AdventureDetails from "./components/AdventureDetails";
 
 const router = createBrowserRouter([
     {
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
                 path: "/yourProfile",
                 element: <YourProfile></YourProfile>,
             },
+            {
+                path: "/updateProfile",
+                element: <UpdateProfile></UpdateProfile>
+            },
+            {
+                path: "/adventure/:id",
+                element: <AdventureDetails></AdventureDetails>
+            }
         ],
     },
 ]);

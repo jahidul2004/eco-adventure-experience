@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-    const { loginUser, user, loginWithGoogle } = useContext(AuthContext);
+    const { loginUser, user, loginWithGoogle, forgetPassword } = useContext(AuthContext);
+    const emailRef = useRef();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -27,6 +28,17 @@ const Login = () => {
         return <Navigate to={"/"} />;
     }
 
+    const handleForget = () =>{
+        const email = emailRef.current.value;
+        forgetPassword(email)
+        .then((result)=>{
+            console.log("Forget Password Email Sent:", result);
+        })
+        .catch((error)=>{
+            console.log("Forget Password Error:", error);
+        })
+    }
+
     return (
         <form
             onSubmit={handleSubmit}
@@ -46,6 +58,7 @@ const Login = () => {
                     <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                 </svg>
                 <input
+                    ref={emailRef}
                     name="email"
                     type="email"
                     className="grow"
@@ -72,7 +85,7 @@ const Login = () => {
                     placeholder="Password"
                 />
             </label>
-            <Link className="text-success font-semibold">Forget Password?</Link>
+            <Link onClick={handleForget} className="text-success font-semibold">Forget Password?</Link>
             <button className="btn btn-success text-white">Login</button>
             <p onClick={loginWithGoogle} className="btn border-success text-success bg-white"><FcGoogle /> Login With Google</p>
             <p>

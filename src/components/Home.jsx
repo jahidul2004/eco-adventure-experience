@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Home = () => {
     const data = useLoaderData();
@@ -6,7 +6,7 @@ const Home = () => {
     console.log("Data is: ", data);
 
     return (
-        <div className="p-4 m-5">
+        <div className="m-5">
             <div className="mb-10">
                 <div className="carousel w-full rounded-lg">
                     <div id="slide1" className="carousel-item relative w-full">
@@ -97,7 +97,7 @@ const Home = () => {
                                 )}
                             </ul>
 
-                            <button className="btn btn-success text-white mt-4 w-full">Explore Now!</button>
+                            <Link to={`/adventure/${adventure.id}`} className="btn btn-success text-white mt-4 w-full">Explore Now!</Link>
                         </div>
                     ))}
                 </div>

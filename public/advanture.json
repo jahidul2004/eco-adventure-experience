@@ -107,5 +107,97 @@
             "Carry biodegradable toiletries",
             "Avoid leaving any waste"
         ]
+    },
+    {
+        "id": 6,
+        "title": "Desert Camel Trekking",
+        "image": "https://i.ibb.co.com/C2L6DDQ/download.jpg",
+        "category": "Desert",
+        "shortDescription": "Embark on an unforgettable camel trek across vast desert dunes.",
+        "adventureCost": 350,
+        "bookingAvailability": true,
+        "location": "Sahara Desert",
+        "duration": "7 days",
+        "adventureLevel": "Moderate",
+        "includedItems": ["Camel", "Food and water", "Guide"],
+        "ecoFriendlyFeatures": [
+            "Low-impact trekking",
+            "Sustainable water usage"
+        ],
+        "maxGroupSize": 10,
+        "specialInstructions": [
+            "Bring sun protection (hat, sunscreen)",
+            "Ensure hydration",
+            "Be prepared for extreme temperatures"
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Northern Lights Expedition",
+        "image": "https://i.ibb.co.com/C2L6DDQ/download.jpg",
+        "category": "Northern Lights",
+        "shortDescription": "Witness the majestic Northern Lights in the Arctic Circle.",
+        "adventureCost": 500,
+        "bookingAvailability": true,
+        "location": "Lapland, Finland",
+        "duration": "5 days",
+        "adventureLevel": "Moderate",
+        "includedItems": ["Thermal clothing", "Meals", "Guide"],
+        "ecoFriendlyFeatures": [
+            "Electric-powered transport",
+            "Low-impact tourism practices"
+        ],
+        "maxGroupSize": 8,
+        "specialInstructions": [
+            "Dress warmly with layers",
+            "Prepare for cold and dark nights",
+            "Be respectful of local wildlife"
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Cave Exploration",
+        "image": "https://i.ibb.co.com/C2L6DDQ/download.jpg",
+        "category": "Caving",
+        "shortDescription": "Explore the underground wonders of vast caves.",
+        "adventureCost": 250,
+        "bookingAvailability": true,
+        "location": "Waitomo Caves, New Zealand",
+        "duration": "2 days",
+        "adventureLevel": "Challenging",
+        "includedItems": ["Caving gear", "Helmet", "Guide"],
+        "ecoFriendlyFeatures": [
+            "Eco-friendly lighting",
+            "Preservation of cave ecosystems"
+        ],
+        "maxGroupSize": 6,
+        "specialInstructions": [
+            "Wear comfortable and sturdy clothing",
+            "Be prepared for confined spaces",
+            "Respect cave conservation rules"
+        ]
+    },
+    {
+        "id": 9,
+        "title": "Volcano Hiking",
+        "image": "https://i.ibb.co.com/C2L6DDQ/download.jpg",
+        "category": "Volcano",
+        "shortDescription": "Hike to the summit of an active volcano for an unforgettable view.",
+        "adventureCost": 400,
+        "bookingAvailability": false,
+        "location": "Mount Bromo, Indonesia",
+        "duration": "2 days",
+        "adventureLevel": "Challenging",
+        "includedItems": ["Hiking gear", "Meals", "Guide"],
+        "ecoFriendlyFeatures": [
+            "Eco-friendly trails",
+            "Minimizing volcanic disturbance"
+        ],
+        "maxGroupSize": 10,
+        "specialInstructions": [
+            "Bring sturdy shoes and a walking stick",
+            "Ensure you are in good physical condition",
+            "Follow safety instructions for volcanic activity"
+        ]
     }
 ]
