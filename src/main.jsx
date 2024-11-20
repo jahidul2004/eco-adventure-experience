@@ -8,6 +8,7 @@ import Home from "./components/Home";
 import Registration from "./components/Registration";
 import Login from "./components/Login";
 import ErrorPage from "./components/ErrorPage";
+import AuthProvider from "./provider/AuthProvider";
 
 const router = createBrowserRouter([
     {
@@ -24,15 +25,15 @@ const router = createBrowserRouter([
                         throw new Error("Failed to load adventures");
                     }
                     return response.json();
-                }
+                },
             },
             {
                 path: "/registration",
-                element: <Registration></Registration>
+                element: <Registration></Registration>,
             },
             {
                 path: "/login",
-                element: <Login></Login>
+                element: <Login></Login>,
             },
         ],
     },
@@ -40,6 +41,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
     <StrictMode>
-        <RouterProvider router={router} />
+        <AuthProvider>
+            <RouterProvider router={router} />
+        </AuthProvider>
     </StrictMode>
 );

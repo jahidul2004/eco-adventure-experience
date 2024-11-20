@@ -1,8 +1,32 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Registration = () => {
+    const { createNewUser, setUser } = useContext(AuthContext);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+
+        const name = formData.get("name");
+        const email = formData.get("email");
+        const photo = formData.get("photo");
+        const password = formData.get("password");
+
+        createNewUser(email, password)
+        .then((userCredential) => {
+            console.log("User is created: ", userCredential);
+            setUser(userCredential.user);
+        })
+        .catch((error) => {
+            console.error("Error creating user: ", error);
+        });
+    };
+
     return (
-        <form className="max-w-[400px] mx-auto shadow-xl p-5 rounded-lg my-10 flex flex-col gap-4">
+        <form onSubmit={handleSubmit} className="max-w-[400px] mx-auto shadow-xl p-5 rounded-lg my-10 flex flex-col gap-4">
             <h1 className="text-success text-center font-bold text-2xl">
                 User Registration
             </h1>
@@ -16,7 +40,12 @@ const Registration = () => {
                     <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
                     <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                 </svg>
-                <input type="text" className="grow" placeholder="Name" />
+                <input
+                    name="name"
+                    type="text"
+                    className="grow"
+                    placeholder="Name"
+                />
             </label>
             <label className="input input-bordered flex items-center gap-2">
                 <svg
@@ -28,7 +57,12 @@ const Registration = () => {
                     <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
                     <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                 </svg>
-                <input type="email" className="grow" placeholder="Email" />
+                <input
+                    name="email"
+                    type="email"
+                    className="grow"
+                    placeholder="Email"
+                />
             </label>
             <label className="input input-bordered flex items-center gap-2">
                 <svg
@@ -39,7 +73,12 @@ const Registration = () => {
                 >
                     <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                 </svg>
-                <input type="text" className="grow" placeholder="Photo Url" />
+                <input
+                    name="photo"
+                    type="text"
+                    className="grow"
+                    placeholder="Photo Url"
+                />
             </label>
             <label className="input input-bordered flex items-center gap-2">
                 <svg
@@ -55,6 +94,7 @@ const Registration = () => {
                     />
                 </svg>
                 <input
+                    name="password"
                     type="password"
                     className="grow"
                     placeholder="Password"
