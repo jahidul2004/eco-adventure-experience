@@ -9,6 +9,7 @@ import Registration from "./components/Registration";
 import Login from "./components/Login";
 import ErrorPage from "./components/ErrorPage";
 import AuthProvider from "./provider/AuthProvider";
+import YourProfile from "./components/YourProfile";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <Login></Login>,
+            },
+            {
+                path: "/yourProfile",
+                element: <YourProfile></YourProfile>,
             },
         ],
     },
