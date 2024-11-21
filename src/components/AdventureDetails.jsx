@@ -38,78 +38,74 @@ const AdventureDetails = () => {
     };
 
     if (!adventure) {
-        return <p className="text-center my-4 text-success font-semibold">
-            Not Found!
-        </p>;
+        return (
+            <p className="text-center my-4 text-success font-semibold">
+                Not Found!
+            </p>
+        );
     }
     return (
         <div>
             <Helmet>
                 <title>{adventure.title}</title>
             </Helmet>
-            {user ? (
-                <div className="m-5 flex flex-col md:flex-row gap-4 text-left">
-                    <div>
-                        <img
-                            className="w-full rounded-lg h-[400px]"
-                            src={adventure.image}
-                            alt={adventure.title}
-                        />
-                    </div>
 
-                    <div>
-                        <h1 className="text-3xl font-bold mb-8">
-                            {adventure.title}
-                        </h1>
-                        <p className="mt-2">{adventure.shortDescription}</p>
-                        <p className="mt-2">
-                            <strong>Location:</strong> {adventure.location}
-                        </p>
-                        <p className="mt-2">
-                            <strong>Duration:</strong> {adventure.duration}
-                        </p>
-                        <p className="mt-2">
-                            <strong>Adventure Level:</strong>{" "}
-                            {adventure.adventureLevel}
-                        </p>
-                        <p className="mt-2">
-                            <strong>Cost:</strong> ${adventure.adventureCost}
-                        </p>
-
-                        <h2 className="mt-4 text-xl font-bold">
-                            Eco-friendly Features
-                        </h2>
-                        <ul className="list-inside list-disc">
-                            {adventure.ecoFriendlyFeatures.map(
-                                (feature, index) => (
-                                    <li key={index}>{feature}</li>
-                                )
-                            )}
-                        </ul>
-
-                        <h2 className="mt-4 text-xl font-bold">
-                            Special Instructions
-                        </h2>
-                        <ul className="list-inside list-disc">
-                            {adventure.specialInstructions.map(
-                                (instruction, index) => (
-                                    <li key={index}>{instruction}</li>
-                                )
-                            )}
-                        </ul>
-
-                        <button
-                            onClick={handleExpertConsultation}
-                            className="btn btn-success text-white mt-3"
-                        >
-                            Talk With Expert
-                        </button>
-                    </div>
+            <div className="m-5 flex flex-col md:flex-row gap-4 text-left">
+                <div>
+                    <img
+                        className="w-full rounded-lg h-[400px]"
+                        src={adventure.image}
+                        alt={adventure.title}
+                    />
                 </div>
-            ) : (
-                <Navigate to={"/login"} />
-            )}
 
+                <div>
+                    <h1 className="text-3xl font-bold mb-8">
+                        {adventure.title}
+                    </h1>
+                    <p className="mt-2">{adventure.shortDescription}</p>
+                    <p className="mt-2">
+                        <strong>Location:</strong> {adventure.location}
+                    </p>
+                    <p className="mt-2">
+                        <strong>Duration:</strong> {adventure.duration}
+                    </p>
+                    <p className="mt-2">
+                        <strong>Adventure Level:</strong>{" "}
+                        {adventure.adventureLevel}
+                    </p>
+                    <p className="mt-2">
+                        <strong>Cost:</strong> ${adventure.adventureCost}
+                    </p>
+
+                    <h2 className="mt-4 text-xl font-bold">
+                        Eco-friendly Features
+                    </h2>
+                    <ul className="list-inside list-disc">
+                        {adventure.ecoFriendlyFeatures.map((feature, index) => (
+                            <li key={index}>{feature}</li>
+                        ))}
+                    </ul>
+
+                    <h2 className="mt-4 text-xl font-bold">
+                        Special Instructions
+                    </h2>
+                    <ul className="list-inside list-disc">
+                        {adventure.specialInstructions.map(
+                            (instruction, index) => (
+                                <li key={index}>{instruction}</li>
+                            )
+                        )}
+                    </ul>
+
+                    <button
+                        onClick={handleExpertConsultation}
+                        className="btn btn-success text-white mt-3"
+                    >
+                        Talk With Expert
+                    </button>
+                </div>
+            </div>
             {isModalOpen && (
                 <Modal onClose={() => setIsModalOpen(false)}>
                     <div className="p-4 text-center">

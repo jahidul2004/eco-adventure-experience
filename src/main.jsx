@@ -58,7 +58,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "/adventure/:id",
-                element: <AdventureDetails></AdventureDetails>,
+                element: (
+                    <PrivateRoute>
+                        <AdventureDetails />
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "/faq",
