@@ -12,7 +12,7 @@ const YourProfile = () => {
                 <title>Your Profile</title>
             </Helmet>
             {user ? (
-                <div>
+                <div className="text-center md:text-left">
                     <h1 className="text-center font-bold text-success text-4xl mt-5">
                         Welcome {user.displayName}!
                     </h1>

@@ -14,6 +14,7 @@ import UpdateProfile from "./components/UpdateProfile";
 import AdventureDetails from "./components/AdventureDetails";
 import { ToastContainer } from "react-toastify";
 import Faq from "./components/Faq";
+import PrivateRoute from "./components/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -41,24 +42,32 @@ const router = createBrowserRouter([
             },
             {
                 path: "/yourProfile",
-                element: <YourProfile></YourProfile>,
+                element: (
+                    <PrivateRoute>
+                        <YourProfile />
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "/updateProfile",
-                element: <UpdateProfile></UpdateProfile>,
+                element: (
+                    <PrivateRoute>
+                        <UpdateProfile />
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "/adventure/:id",
                 element: <AdventureDetails></AdventureDetails>,
             },
             {
-                path:"/faq",
-                element: <Faq></Faq>
+                path: "/faq",
+                element: <Faq></Faq>,
             },
             {
                 path: "*",
                 element: <ErrorPage></ErrorPage>,
-            }
+            },
         ],
     },
 ]);

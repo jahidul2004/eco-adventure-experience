@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Helmet } from "react-helmet";
-import { Navigate } from "react-router-dom";
 import { notify } from "../utilities/utils";
 
 const UpdateProfile = () => {
@@ -33,39 +32,35 @@ const UpdateProfile = () => {
             <Helmet>
                 <title>Update Profile</title>
             </Helmet>
-            {user ? (
-                <form
-                    onSubmit={handleSubmit}
-                    className="rounded-lg max-w-[400px] shadow-lg my-20 mx-auto p-10 flex flex-col gap-3"
-                >
-                    <h1 className="text-2xl font-bold text-center text-success mb-3">
-                        Update Profile
-                    </h1>
-                    <label className="input input-bordered flex items-center gap-2">
-                        <input
-                            name="photo"
-                            type="text"
-                            className="grow"
-                            placeholder="Photo URL"
-                            defaultValue={user?.photoURL || ""}
-                        />
-                    </label>
-                    <label className="input input-bordered flex items-center gap-2">
-                        <input
-                            name="name"
-                            type="text"
-                            className="grow"
-                            placeholder="Name"
-                            defaultValue={user?.displayName || ""}
-                        />
-                    </label>
-                    <button className="btn btn-success text-white">
-                        Update Profile
-                    </button>
-                </form>
-            ) : (
-                <Navigate to={"/login"} />
-            )}
+            <form
+                onSubmit={handleSubmit}
+                className="rounded-lg max-w-[400px] shadow-lg my-20 mx-auto p-10 flex flex-col gap-3"
+            >
+                <h1 className="text-2xl font-bold text-center text-success mb-3">
+                    Update Profile
+                </h1>
+                <label className="input input-bordered flex items-center gap-2">
+                    <input
+                        name="photo"
+                        type="text"
+                        className="grow"
+                        placeholder="Photo URL"
+                        defaultValue={user?.photoURL || ""}
+                    />
+                </label>
+                <label className="input input-bordered flex items-center gap-2">
+                    <input
+                        name="name"
+                        type="text"
+                        className="grow"
+                        placeholder="Name"
+                        defaultValue={user?.displayName || ""}
+                    />
+                </label>
+                <button className="btn btn-success text-white">
+                    Update Profile
+                </button>
+            </form>
         </div>
     );
 };

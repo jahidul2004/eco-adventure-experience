@@ -5,7 +5,6 @@ import NewsLetter from "./NewsLetter";
 const Home = () => {
     const data = useLoaderData();
 
-    console.log("Data is: ", data);
 
     return (
         <div className="m-5">

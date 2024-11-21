@@ -54,7 +54,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="animate__animated animate__bounce btn btn-ghost text-2xl font-bold text-success">
+                <a className="animate__animated animate__bounce btn btn-ghost text-lg md:text-xl lg:text-2xl font-bold text-success">
                     Eco-Adventure
                 </a>
             </div>
