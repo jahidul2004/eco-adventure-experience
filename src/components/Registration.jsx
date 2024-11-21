@@ -10,6 +10,8 @@ const Registration = () => {
     const [redirect, setRedirect] = useState(false);
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
+    const [error, setError] = useState(null);
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -25,7 +27,7 @@ const Registration = () => {
         }
 
         if (!passwordRegex.test(password)) {
-            notify(
+            setError(
                 "Password must have an uppercase letter, a lowercase letter, and be at least 6 characters long!"
             );
             return;
@@ -107,6 +109,7 @@ const Registration = () => {
                     Login
                 </Link>
             </p>
+            <p className="text-error my-2 font-semibold">{error}</p>
         </form>
     );
 };
