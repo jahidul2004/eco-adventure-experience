@@ -38,7 +38,9 @@ const AdventureDetails = () => {
     };
 
     if (!adventure) {
-        return <p>Loading...</p>;
+        return <p className="text-center my-4 text-success font-semibold">
+            Not Found!
+        </p>;
     }
     return (
         <div>

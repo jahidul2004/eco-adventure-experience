@@ -8,7 +8,6 @@ const Registration = () => {
     const { createNewUser, setUser, updateUserProfile } =
         useContext(AuthContext);
     const [redirect, setRedirect] = useState(false);
-
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
     const handleSubmit = async (event) => {

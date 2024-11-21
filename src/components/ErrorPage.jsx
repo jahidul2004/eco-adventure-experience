@@ -1,7 +1,6 @@
-import { Link, useRouteError } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
-    const error = useRouteError();
 
     return (
         <div className="flex items-center justify-center h-screen">
@@ -9,11 +8,12 @@ const ErrorPage = () => {
                 <h1 className="text-9xl font-extrabold text-red-500">404</h1>
 
                 <h2 className="text-4xl font-bold text-gray-800 mt-4">
-                    {error.statusText || "Oops! Page not found"}!
+                    {"Oops! Page not found"}!
                 </h2>
                 <p className="mt-2 text-lg text-gray-600 mb-10">
-                    {error.message ||
-                        "The page you’re looking for doesn’t exist or an error occurred."}
+                    {
+                        "The page you’re looking for doesn’t exist or an error occurred."
+                    }
                 </p>
                 <Link
                     to={"/"}
