@@ -9,6 +9,8 @@ const Registration = () => {
         useContext(AuthContext);
     const [redirect, setRedirect] = useState(false);
 
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -20,6 +22,13 @@ const Registration = () => {
 
         if (!name || !email || !photo || !password) {
             notify("All fields are required!");
+            return;
+        }
+
+        if (!passwordRegex.test(password)) {
+            notify(
+                "Password must have an uppercase letter, a lowercase letter, and be at least 6 characters long!"
+            );
             return;
         }
 
