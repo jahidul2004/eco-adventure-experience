@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
+import NewsLetter from "./NewsLetter";
 
 const Home = () => {
     const data = useLoaderData();
@@ -115,6 +116,8 @@ const Home = () => {
                     ))}
                 </div>
             </div>
+
+            <NewsLetter></NewsLetter>
         </div>
     );
 };
