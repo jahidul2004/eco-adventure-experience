@@ -4,7 +4,7 @@
 Eco Adventure is a modern e-commerce website where users can browse and purchase various adventure gear and eco-friendly products. It offers a user-friendly design and advanced features to enhance the user experience.
 
 ## **Live URL**
-[Visit Live Site](https://assignment-9-002.netlify.app/)
+[Visit Live Site](https://eco-adventure-experience-3aa69.web.app)
 
 ## **Key Features**
 - **Dynamic Routing:** Smooth navigation with React Router.
