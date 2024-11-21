@@ -68,6 +68,7 @@ const Navbar = () => {
                             className="w-[50px] h-[50px] border-2 border-success rounded-full p-1 mr-3"
                             src={user.photoURL}
                             alt=""
+                            title={user.displayName || "User"}
                         />
                         <Link
                             onClick={logOut}
