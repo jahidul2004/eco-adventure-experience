@@ -8,8 +8,6 @@ const ForgetPassword = () => {
     const emailRef = useRef();
     const location = useLocation();
     const { forgetPassword } = useContext(AuthContext);
-
-    // Login থেকে প্রেরিত ইমেইল পেতে location.state ব্যবহার
     const prefilledEmail = location.state?.email || "";
 
     useEffect(() => {
@@ -29,6 +27,7 @@ const ForgetPassword = () => {
         forgetPassword(email)
             .then(() => {
                 notify(`A password reset link has been sent to ${email}.`);
+                window.open("https://mail.google.com", "_blank");
             })
             .catch((error) => {
                 console.error("Password Reset Error:", error);
@@ -38,9 +37,6 @@ const ForgetPassword = () => {
 
     return (
         <div className="flex flex-col gap-2 max-w-[400px] my-10 mx-auto text-center shadow-xl p-10 rounded-lg">
-            <Helmet>
-                <title>Forget Password</title>
-            </Helmet>
             <h1 className="text-3xl font-bold text-success mb-5">Forgot Password?</h1>
             <input
                 ref={emailRef}

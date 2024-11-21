@@ -46,10 +46,6 @@ const AdventureDetails = () => {
     }
     return (
         <div>
-            <Helmet>
-                <title>{adventure.title}</title>
-            </Helmet>
-
             <div className="m-5 flex flex-col md:flex-row gap-4 text-left">
                 <div>
                     <img

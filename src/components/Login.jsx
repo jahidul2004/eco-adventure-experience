@@ -2,7 +2,6 @@ import { useContext, useRef, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
-import { Helmet } from "react-helmet";
 import { notify } from "../utilities/utils";
 
 const Login = () => {
@@ -38,7 +37,7 @@ const Login = () => {
         if (email) {
             navigate("/forgetPassword", { state: { email } });
         } else {
-            notify("Please enter your email to reset password");
+            navigate("/forgetPassword", { state: { } });
         }
     };
 
@@ -51,9 +50,6 @@ const Login = () => {
             onSubmit={handleSubmit}
             className="max-w-[400px] mx-auto shadow-xl p-5 rounded-lg my-10 flex flex-col gap-4"
         >
-            <Helmet>
-                <title>Login</title>
-            </Helmet>
             <h1 className="text-success text-center font-bold text-2xl">
                 User Login
             </h1>

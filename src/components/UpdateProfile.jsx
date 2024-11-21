@@ -29,9 +29,6 @@ const UpdateProfile = () => {
 
     return (
         <div>
-            <Helmet>
-                <title>Update Profile</title>
-            </Helmet>
             <form
                 onSubmit={handleSubmit}
                 className="rounded-lg max-w-[400px] shadow-lg my-20 mx-auto p-10 flex flex-col gap-3"

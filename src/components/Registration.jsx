@@ -58,9 +58,6 @@ const Registration = () => {
             onSubmit={handleSubmit}
             className="max-w-[400px] mx-auto shadow-xl p-5 rounded-lg my-10 flex flex-col gap-4"
         >
-            <Helmet>
-                <title>Registration</title>
-            </Helmet>
             <h1 className="text-success text-center font-bold text-2xl">
                 User Registration
             </h1>

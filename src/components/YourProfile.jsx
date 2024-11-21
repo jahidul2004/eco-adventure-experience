@@ -8,10 +8,6 @@ const YourProfile = () => {
 
     return (
         <div>
-            <Helmet>
-                <title>Your Profile</title>
-            </Helmet>
-
             <div className="text-center md:text-left">
                 <h1 className="text-center font-bold text-success text-4xl mt-5">
                     Welcome {user.displayName}!

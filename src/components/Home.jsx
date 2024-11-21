@@ -1,16 +1,31 @@
-import { Helmet } from "react-helmet";
-import { Link, useLoaderData } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLoaderData, useLocation } from "react-router-dom";
 import NewsLetter from "./NewsLetter";
 
 const Home = () => {
     const data = useLoaderData();
+    const location = useLocation();
 
+    useEffect(() => {
+        let pageTitle = "Eco Adventure - Home";
+
+        if (location.pathname === "/") {
+            pageTitle = "Home - Eco Adventure";
+        } else if (location.pathname === "/yourProfile") {
+            pageTitle = "Your Profile - Eco Adventure";
+        } else if (location.pathname === "/updateProfile") {
+            pageTitle = "Update Profile - Eco Adventure";
+        } else if (location.pathname === "/faq") {
+            pageTitle = "FAQ - Eco Adventure";
+        }else if(location.pathname === "/forgetPassword"){
+            pageTitle = "Forget Password - Eco Adventure";
+        }
+
+        document.title = pageTitle;
+    }, [location]);
 
     return (
         <div className="m-5">
-            <Helmet>
-                <title>Home</title>
-            </Helmet>
             <div className="mb-10">
                 <div className="carousel w-full rounded-lg">
                     <div

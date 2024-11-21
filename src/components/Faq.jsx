@@ -1,11 +1,7 @@
-import { Helmet } from "react-helmet";
 
 const Faq = () => {
     return (
         <div className="flex flex-col gap-4 my-10">
-            <Helmet>
-                <title>FAQ</title>
-            </Helmet>
             <div className="collapse collapse-plus bg-base-200">
                 <input type="radio" name="my-accordion-3" defaultChecked />
                 <div className="collapse-title text-xl font-medium">
