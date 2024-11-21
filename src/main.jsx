@@ -15,6 +15,7 @@ import AdventureDetails from "./components/AdventureDetails";
 import { ToastContainer } from "react-toastify";
 import Faq from "./components/Faq";
 import PrivateRoute from "./components/PrivateRoute";
+import ForgetPassword from "./components/ForgetPassword";
 
 const router = createBrowserRouter([
     {
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
                 path: "*",
                 element: <ErrorPage></ErrorPage>,
             },
+            {
+                path:"/forgetPassword",
+                element:<ForgetPassword></ForgetPassword>
+            }
         ],
     },
 ]);

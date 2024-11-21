@@ -1,14 +1,15 @@
 import { useContext, useRef, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { Helmet } from "react-helmet";
 import { notify } from "../utilities/utils";
 
 const Login = () => {
-    const { loginUser, user, setUser, loginWithGoogle, forgetPassword } =
+    const { loginUser, user, setUser, loginWithGoogle } =
         useContext(AuthContext);
     const emailRef = useRef();
+    const navigate = useNavigate();
 
     const [error, setError] = useState(null);
 
@@ -16,7 +17,6 @@ const Login = () => {
         event.preventDefault();
 
         const formData = new FormData(event.target);
-
         const email = formData.get("email");
         const password = formData.get("password");
 
@@ -24,32 +24,27 @@ const Login = () => {
 
         loginUser(email, password)
             .then((userCredential) => {
-                console.log(userCredential.user);
                 notify("User Logged In Successfully");
                 setUser(userCredential.user);
+                navigate("/");
             })
-            .catch((error) => {
-                console.log("ERROR:", error);
-                setError(error.message);
+            .catch(() => {
+                setError("Invalid email or password. Please try again.");
             });
+    };
+
+    const handleForgetPassword = () => {
+        const email = emailRef.current.value;
+        if (email) {
+            navigate("/forgetPassword", { state: { email } });
+        } else {
+            notify("Please enter your email to reset password");
+        }
     };
 
     if (user) {
         return <Navigate to={"/"} />;
     }
-
-    const handleForget = () => {
-        const email = emailRef.current.value;
-        forgetPassword(email)
-            .then((result) => {
-                console.log("Forget Password Email Sent:", result);
-                notify(`Forget Password Email Sent to ${email}`);
-            })
-            .catch((error) => {
-                console.log("Forget Password Error:", error);
-                notify(error.message);
-            });
-    };
 
     return (
         <form
@@ -62,6 +57,7 @@ const Login = () => {
             <h1 className="text-success text-center font-bold text-2xl">
                 User Login
             </h1>
+            {/* Email Field */}
             <label className="input input-bordered flex items-center gap-2">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -78,8 +74,10 @@ const Login = () => {
                     type="email"
                     className="grow"
                     placeholder="Email"
+                    required
                 />
             </label>
+            {/* Password Field */}
             <label className="input input-bordered flex items-center gap-2">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -98,29 +96,41 @@ const Login = () => {
                     type="password"
                     className="grow"
                     placeholder="Password"
+                    required
                 />
             </label>
-            <Link onClick={handleForget} className="text-success font-semibold">
+            {/* Forget Password Link */}
+            <button
+                type="button"
+                className="text-success font-semibold text-left"
+                onClick={handleForgetPassword}
+            >
                 Forget Password?
-            </Link>
-            <button className="btn btn-success text-white">Login</button>
-            <p
+            </button>
+            {/* Login Button */}
+            <button type="submit" className="btn btn-success text-white">
+                Login
+            </button>
+            {/* Google Login */}
+            <button
+                type="button"
                 onClick={loginWithGoogle}
-                className="btn border-success text-success bg-white"
+                className="btn border-success text-success bg-white flex items-center gap-2 justify-center"
             >
                 <FcGoogle /> Login With Google
-            </p>
+            </button>
+            {/* Registration Link */}
             <p>
-                Have any account? please{" "}
+                Don't have an account?{" "}
                 <Link
-                    className="text-success font-semibold"
                     to={"/registration"}
+                    className="text-success font-semibold"
                 >
-                    Registration
+                    Register here
                 </Link>
             </p>
-
-            <p className="text-error font-semibold">{error}</p>
+            {/* Error Message */}
+            {error && <p className="text-error font-semibold">{error}</p>}
         </form>
     );
 };
