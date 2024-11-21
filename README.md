@@ -1,8 +1,28 @@
-# React + Vite
+# **Project Name: Eco-Adventure Experiences**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## **Project Purpose**
+Eco Adventure is a modern e-commerce website where users can browse and purchase various adventure gear and eco-friendly products. It offers a user-friendly design and advanced features to enhance the user experience.
 
-Currently, two official plugins are available:
+## **Live URL**
+[Visit Live Site](https://assignment-9-002.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **Key Features**
+- **Dynamic Routing:** Smooth navigation with React Router.
+- **User Authentication:** Secure login and registration functionality.
+- **Responsive Design:** Mobile-friendly interface for seamless browsing across devices.
+- **Profile Management:** Users can update their profiles with ease.
+- **Cart Management:** Add, view, and remove items from the shopping cart.
+- **404 Error Page:** Custom error page for handling invalid routes.
+- **Real-Time Updates:** Navbar and user data update dynamically after profile changes.
+
+## **Technologies Used**
+- **Frontend Framework:** React.js
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS
+- **Authentication:** Firebase Authentication
+- **State Management:** React Context API
+- **Hosting:** Netlify
+
+
+## **NPM Package Used**
+- **Animate CSS:** animate.css
