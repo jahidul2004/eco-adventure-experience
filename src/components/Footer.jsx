@@ -1,6 +1,7 @@
 import { BsFillThreadsFill } from "react-icons/bs";
 import { FaFacebook, FaGithub } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
+import adventureImg from "../assets/adventure.png";
 
 const Footer = () => {
     return (
@@ -8,7 +9,7 @@ const Footer = () => {
             <aside>
                 <img
                     className="w-[80px] h-[80px]"
-                    src="/src/assets/adventure.png"
+                    src={adventureImg}
                     alt=""
                 />
                 <p className="font-bold text-2xl">Eco-Adventure Experiences</p>

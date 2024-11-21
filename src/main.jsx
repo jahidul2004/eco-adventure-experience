@@ -24,7 +24,7 @@ const router = createBrowserRouter([
                 path: "/",
                 element: <Home></Home>,
                 loader: async () => {
-                    const response = await fetch("/public/advanture.json");
+                    const response = await fetch("/advanture.json");
                     if (!response.ok) {
                         throw new Error("Failed to load adventures");
                     }

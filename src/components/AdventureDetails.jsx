@@ -12,7 +12,7 @@ const AdventureDetails = () => {
 
     useEffect(() => {
         const fetchAdventureDetails = async () => {
-            const response = await fetch("/public/advanture.json");
+            const response = await fetch("/advanture.json");
             const data = await response.json();
             const adventure = data.find(
                 (adventure) => adventure.id === parseInt(id)
