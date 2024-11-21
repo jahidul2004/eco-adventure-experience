@@ -35,7 +35,7 @@ const Home = () => {
                     </div>
                     <div
                         id="slide2"
-                        className="carousel-item relative w-full bg-[url('https://i.ibb.co.com/C2L6DDQ/download.jpg')] bg-no-repeat bg-cover h-[400px]"
+                        className="carousel-item relative w-full bg-[url('https://i.ibb.co.com/3YHHQTV/0eb7c4756f338c41a9a96b97b5563608.webp')] bg-no-repeat bg-cover h-[400px]"
                     >
                         <div className="flex justify-center items-center mx-auto">
                             <h1 className="text-5xl font-bold text-white">
@@ -55,7 +55,7 @@ const Home = () => {
 
                     <div
                         id="slide3"
-                        className="carousel-item relative w-full bg-[url('https://i.ibb.co.com/C2L6DDQ/download.jpg')] h-[400px] bg-no-repeat bg-cover"
+                        className="carousel-item relative w-full bg-[url('https://i.ibb.co.com/D5psX0g/8080707b1bf86de1df6e7e82112a61d2ae856eec-37-png.png')] h-[400px] bg-no-repeat bg-cover"
                     >
                         <div className="flex justify-center items-center mx-auto">
                             <h1 className="text-5xl font-bold text-white">

@@ -3,9 +3,10 @@ import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { Helmet } from "react-helmet";
+import { notify } from "../utilities/utils";
 
 const Login = () => {
-    const { loginUser, user, loginWithGoogle, forgetPassword } =
+    const { loginUser, user, setUser, loginWithGoogle, forgetPassword } =
         useContext(AuthContext);
     const emailRef = useRef();
 
@@ -24,6 +25,8 @@ const Login = () => {
         loginUser(email, password)
             .then((userCredential) => {
                 console.log(userCredential.user);
+                notify("User Logged In Successfully");
+                setUser(userCredential.user);
             })
             .catch((error) => {
                 console.log("ERROR:", error);
@@ -40,9 +43,11 @@ const Login = () => {
         forgetPassword(email)
             .then((result) => {
                 console.log("Forget Password Email Sent:", result);
+                notify(`Forget Password Email Sent to ${email}`);
             })
             .catch((error) => {
                 console.log("Forget Password Error:", error);
+                notify(error.message);
             });
     };
 
