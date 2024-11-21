@@ -13,6 +13,7 @@ import YourProfile from "./components/YourProfile";
 import UpdateProfile from "./components/UpdateProfile";
 import AdventureDetails from "./components/AdventureDetails";
 import { ToastContainer } from "react-toastify";
+import Faq from "./components/Faq";
 
 const router = createBrowserRouter([
     {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
                 path: "/adventure/:id",
                 element: <AdventureDetails></AdventureDetails>,
             },
+            {
+                path:"/faq",
+                element: <Faq></Faq>
+            }
         ],
     },
 ]);
