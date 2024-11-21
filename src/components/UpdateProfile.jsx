@@ -2,9 +2,12 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Helmet } from "react-helmet";
 import { notify } from "../utilities/utils";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const UpdateProfile = () => {
     const { user, updateUserProfile, setUser } = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -16,10 +19,15 @@ const UpdateProfile = () => {
 
         updateUserProfile({ displayName: name, photoURL: photo })
             .then(() => {
-                const updatedUser = { ...user, displayName: name, photoURL: photo };
+                const updatedUser = {
+                    ...user,
+                    displayName: name,
+                    photoURL: photo,
+                };
                 setUser(updatedUser);
 
                 notify("Profile Updated Successfully");
+                navigate("/yourProfile");
             })
             .catch((error) => {
                 console.error("Error updating profile: ", error);
