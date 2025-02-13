@@ -97,7 +97,7 @@ const Home = () => {
                     {data.map((adventure) => (
                         <div
                             key={adventure.id}
-                            className="adventure-card border-2 border-success rounded-lg p-4"
+                            className="adventure-card bg-[#f7f7f7] rounded-lg p-4"
                         >
                             <img
                                 className="w-full rounded-lg h-[200px]"
@@ -122,7 +122,7 @@ const Home = () => {
 
                             <Link
                                 to={`/adventure/${adventure.id}`}
-                                className="btn btn-success text-white mt-4 w-full"
+                                className="btn btn-success text-white mt-4 w-max"
                             >
                                 Explore Now!
                             </Link>
