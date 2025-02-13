@@ -33,7 +33,6 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, googleProvider)
             .then((result) => {
                 setUser(result.user);
-                console.log("Google Sign-In Success:", result.user);
             })
             .catch((error) => {
                 console.error("Error during Google Sign-In:", error.message);

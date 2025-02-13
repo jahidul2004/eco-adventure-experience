@@ -17,7 +17,7 @@ const Home = () => {
             pageTitle = "Update Profile - Eco Adventure";
         } else if (location.pathname === "/faq") {
             pageTitle = "FAQ - Eco Adventure";
-        }else if(location.pathname === "/forgetPassword"){
+        } else if (location.pathname === "/forgetPassword") {
             pageTitle = "Forget Password - Eco Adventure";
         }
 
@@ -30,7 +30,7 @@ const Home = () => {
                 <div className="carousel w-full rounded-lg">
                     <div
                         id="slide1"
-                        className="carousel-item relative w-full bg-[url('https://i.ibb.co.com/C2L6DDQ/download.jpg')] bg-no-repeat bg-cover h-[400px]"
+                        className="carousel-item relative w-full bg-[url('https://i.ibb.co.com/zTrF7DVN/Hiker-overlooking-sunrise-on-Kilimanjaro.webp')] bg-no-repeat bg-cover h-[400px]"
                     >
                         <div className="flex justify-center items-center mx-auto">
                             <h1 className="text-5xl font-bold text-white">
@@ -49,7 +49,7 @@ const Home = () => {
                     </div>
                     <div
                         id="slide2"
-                        className="carousel-item relative w-full bg-[url('https://i.ibb.co.com/3YHHQTV/0eb7c4756f338c41a9a96b97b5563608.webp')] bg-no-repeat bg-cover h-[400px]"
+                        className="carousel-item relative w-full bg-[url('https://i.ibb.co.com/ksXQNrng/2337e11f-6622-47d1-96a5-4609f447ff86.webp')] bg-no-repeat bg-cover h-[400px]"
                     >
                         <div className="flex justify-center items-center mx-auto">
                             <h1 className="text-5xl font-bold text-white">
@@ -69,7 +69,7 @@ const Home = () => {
 
                     <div
                         id="slide3"
-                        className="carousel-item relative w-full bg-[url('https://i.ibb.co.com/D5psX0g/8080707b1bf86de1df6e7e82112a61d2ae856eec-37-png.png')] h-[400px] bg-no-repeat bg-cover"
+                        className="carousel-item relative w-full bg-[url('https://i.ibb.co.com/m51tPt58/1330f475-0a6f-4b52-9f1c-68e6ce1ac4d9.webp')] h-[400px] bg-no-repeat bg-cover"
                     >
                         <div className="flex justify-center items-center mx-auto">
                             <h1 className="text-5xl font-bold text-white">
