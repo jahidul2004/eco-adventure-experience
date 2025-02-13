@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import "animate.css";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
     const links = (
@@ -54,7 +55,8 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="animate__animated animate__bounce btn btn-ghost text-lg md:text-xl lg:text-2xl font-bold text-success">
+                <a className="animate__animated animate__bounce flex items-center gap-2 text-lg md:text-xl lg:text-2xl font-bold text-success">
+                    <img className="w-[40px] h-[40px]" src={logo} alt="" />
                     Eco-Adventure
                 </a>
             </div>
@@ -78,7 +80,10 @@ const Navbar = () => {
                         </Link>
                     </div>
                 ) : (
-                    <Link to={"/login"} className="animate__animated animate__fadeIn btn btn-success text-white">
+                    <Link
+                        to={"/login"}
+                        className="animate__animated animate__fadeIn btn btn-success text-white"
+                    >
                         Login
                     </Link>
                 )}
