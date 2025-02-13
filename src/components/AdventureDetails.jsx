@@ -46,7 +46,7 @@ const AdventureDetails = () => {
     }
     return (
         <div>
-            <div className="m-5 flex flex-col md:flex-row gap-4 text-left">
+            <div className="m-5 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 text-left">
                 <div>
                     <img
                         className="w-full rounded-lg h-[400px]"
@@ -56,7 +56,7 @@ const AdventureDetails = () => {
                 </div>
 
                 <div>
-                    <h1 className="text-3xl font-bold mb-8">
+                    <h1 className="text-3xl font-bold mb-5">
                         {adventure.title}
                     </h1>
                     <p className="mt-2">{adventure.shortDescription}</p>
