@@ -1,3 +1,6 @@
+![Repository Banner](https://i.ibb.co.com/BH7bQX0V/Screenshot-48.png)
+
+
 # **Project Name: Eco-Adventure Experiences**
 
 ## **Project Purpose**
