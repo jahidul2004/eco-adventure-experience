@@ -100,7 +100,7 @@ const Home = () => {
                             className="adventure-card bg-[#f7f7f7] rounded-lg p-4"
                         >
                             <img
-                                className="w-full rounded-lg h-[200px]"
+                                className="object-cover w-full rounded-lg h-[200px]"
                                 src={adventure.image}
                                 alt={adventure.title}
                                 width="300"
