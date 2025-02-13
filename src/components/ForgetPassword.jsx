@@ -37,20 +37,20 @@ const ForgetPassword = () => {
 
     return (
         <div className="flex flex-col gap-2 max-w-[400px] my-10 mx-auto text-center shadow-xl p-10 rounded-lg">
-            <h1 className="text-3xl font-bold text-success mb-5">Forgot Password?</h1>
-            <input
-                ref={emailRef}
-                type="email"
-                className="input border border-black p-2"
-                placeholder="Enter Your Email"
-            />
-            <button
-                type="button"
-                onClick={handleResetPassword}
-                className="btn btn-success text-white mt-4"
-            >
-                Reset Password
-            </button>
+            <h1 className="text-3xl font-bold text-success mb-5">
+                Forgot Password?
+            </h1>
+            <form onSubmit={handleResetPassword} action="">
+                <input
+                    ref={emailRef}
+                    type="email"
+                    className="input border border-black p-2"
+                    placeholder="Enter Your Email"
+                />
+                <button className="btn btn-success text-white mt-4">
+                    Reset Password
+                </button>
+            </form>
         </div>
     );
 };
